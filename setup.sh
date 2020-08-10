@@ -22,9 +22,7 @@ git clone https://github.com/citizenfx/cfx-server-data /home/ec2-user/fxserver/s
 mkdir -p /etc/supervisor/conf.data
 echo_supervisord_conf > /etc/supervisor/supervisord.conf
 
-sed ';files = relative/directory/*.ini/a \
-[include]\n
-files=conf.d/*.conf' /etc/supervisor/supervisord.conf
+sed -i '0,/^;files = relative\/directory\/\*.ini/s//[include]\nfiles=conf.d\/\*.conf/' /etc/supervisor/supervisord.conf
 
 cat > /etc/systemd/system/supervisord.service << EOF
 [Unit]

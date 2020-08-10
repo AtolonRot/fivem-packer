@@ -16,7 +16,7 @@
                     "root-device-type": "ebs"
                 },
                 "owners": [
-                    "breyner"
+                    "amazon"
                 ],
                 "most_recent": true
             },
